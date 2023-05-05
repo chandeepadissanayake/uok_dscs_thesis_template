@@ -1,0 +1,40 @@
+% DO NOT change unless specified explicitly
+
+% Cleaning up default document class's headers and footers.
+\fancypagestyle{plain}{
+    \lhead{}
+    \fancyhead[R]{}
+    \fancyhead[L]{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{\thepage}
+}
+\pagestyle{fancy}
+\fancyhead[R]{}
+\fancyhead[L]{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+% Chapter Title Formatting
+\titleformat{\chapter}[hang]
+{\normalfont\fontsize{16}{19.2}\bfseries}
+{\thechapter.}
+{1em}
+{}
+
+\titleformat{\section}
+{\normalfont\fontsize{16}{19.2}\bfseries}
+{\thesection}
+{1em}
+{}
+
+\titlespacing*{\chapter}{0pt}{0pt}{0.5\baselineskip}
+
+% Other settings
+\parindent 0pt
+\doublespacing
+\graphicspath{ {resources/figures/} }
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Add dots to table of contents, other other similar pages
+\makeglossaries
+
+% Including environments
+\input{envs/index}

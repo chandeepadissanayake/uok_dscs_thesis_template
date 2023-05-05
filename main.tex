@@ -1,0 +1,153 @@
+%
+% ==============================================================================================
+%                                      Thesis Template
+% ==============================================================================================
+% 
+% - This template is for the use of the Final Year Undergraduates of the Department of          %   Statistics & Computer Science at University of Kelaniya for preparing their thesis for the 
+%   Research Project.
+%
+% - Please note that this is by no means official and merely created by the student(s) 
+%   themselves. 
+% 
+% - The department bears no responsibility or liability regarding this template and may change 
+%   depending on the requirements of the department.
+% - You may use this to craft your research thesis under your own discretion.
+% 
+% - Authored by Chandeepa Dissanayake (https://github.com/chandeepadissanayake/)
+% 
+%
+% ==============================================================================================
+% Instructions for Usage
+%
+% 1. Update the contents of the following pages as per the instructions found in
+%    them
+%       1.1 Thesis Information                                : thesis_info.tex
+%       1.2 Personnel Information (involved with the research): personnel_info.tex
+%
+% 2. Add contents to the following pages with your own, customized writings.
+%       2.1 Dedication:  pages/dedication.tex
+%       2.2 Acknowledgement: pages/acknowledgements.txt
+%
+% 3. Add definitions of terms that you anticipate on using in the thesis in definitions.tex
+%       - The instructions have been provided in the file
+%
+% 4. Add the list of abbreviations that you anticipate on using in the thesis in 
+%    abbreviations.tex
+%       - The instructions have been provided in the file
+%
+% 5. Write the abstract of your work in research/abstract.tex
+%       - Instructions and guidelines are found in the file
+%
+% 6. Craft the contents in the following files which correspond to your research work.
+%       6.1 Introduction : research/introduction/index.tex
+%           6.1.1 Background   : research/introduction/background.tex
+%           6.1.2 Objectives   : research/introduction/objectives.tex
+%           6.1.3 Significance : research/introduction/significance.tex
+%           
+%           - Any other sub-sections could be added as guided in the file.
+%       6.2 Literature Review: research/literature_review/index.tex
+%           - Any sub-sections could be added as guided in the file.
+%       6.3 Methodology: research/methodology/index.tex
+%           - Any sub-sections could be added as guided in the file.
+%       6.4 Results and Discussion: research/results_and_discussion/index.tex
+%           - Any sub-sections could be added as guided in the file.
+%       6.5 Conclusions: research/conclusions/index.tex
+%           6.5.1 Limitations: research/conclusions/limitations.tex
+%           6.5.2 Future Work: research/conclusions/future_work.tex
+%           
+%           - Any other sub-sections could be added as guided in the file.
+%       6.6 Appendices: research/appendices/index.tex
+%           - Follow the in-file instructions for adding appendices
+%
+%       - Following guidelines must be followed when compiling the contents in the pages under
+%         6
+%            I) Tables:
+%                 i. Use \table tag to define all tables. Borders must be visible and 1pt.
+%                ii. Headers must be in bold face.
+%               iii. Tables must be captioned and centered.
+%                iv. Padding must be such that the borders don’t touch the text in every cell.
+%                 v. Text in each cell must be left-aligned (flushed left)
+%           II) Figures:
+%                 i. Use \figure tag to define all figures.
+%                ii. Figures must be captioned.
+%               iii. All figures must ONLY be uploaded to resources/figures folder.
+%          III) References:
+%                 i. All reference material that are used must be defined in 
+%                    research/references.tex. This can be achieved in either of the following 
+%                    methods.
+%                ii. Defined as a list in references.tex using \bibitem. Refer to: 
+%                    https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex
+%               iii. Defined in a .bib file, typically exported from a reference management 
+%                    tool. Steps are as follows.
+%                       a. Upload all .bib files into resources/references folder.
+%                       b. Add all files as references into research/references.tex file using
+%                          the tag: \bibliography{bib_file_name.bib}
+%
+% Important NOTE:  
+%   Add any packages that you need to use in your compilation in settings/user_dependencies.tex
+%
+% Additional Notes:
+%
+%   I. Do NOT attempt to change the contents of portions of markup where it is explicitly
+%      specified not to do so, unless you're assured about what you're doing.
+%  II. Contents inside settings/global.tex is better left intact. Changing them would cause 
+%      large and possibly catastrophic changes to the styles.
+% III. Do not change any template dependencies in settings/template_dependencies.tex as well.
+%  IV. It's better not to change the folder structure.
+%   V. You can add any custom environments inside the folder envs but be cautious in doing so.
+%
+% ==============================================================================================
+\documentclass[12pt, openany]{book} % openany for eliminating the blank pages in between chapters
+
+% ==========================================================
+% Template Dependencies
+\input{settings/template_dependencies}
+
+% Template Dependencies
+\input{settings/user_dependencies}
+
+% Global Settings
+\input{settings/global}
+
+% Definitions
+\input{definitions}
+
+% Abbreviations
+\input{abbreviations}
+
+% References
+\input{research/references}
+% ==========================================================
+
+\begin{document}
+
+    \input{pages/cover} \clearpage
+    \input{pages/declaration} \clearpage
+    \input{pages/table_of_contents} \clearpage
+    
+    % Disable counting for the following sections
+    \setcounter{secnumdepth}{0}
+    \input{pages/list_of_figures} \clearpage
+    \input{pages/list_of_tables} \clearpage
+    \input{pages/dedication} \clearpage
+    \input{pages/acknowledgements} \clearpage
+    % NOTE: Remove the clearpage tag in the following pages based on whether there is no 
+    % definition/no abbreviation in your thesis.
+    \input{pages/list_of_definitions} \clearpage
+    \input{pages/list_of_abbreviations} \clearpage
+
+    \input{research/abstract} \clearpage
+    
+    % Enable counting for the remaining sections
+    \setcounter{secnumdepth}{1}
+
+    % Research Pages
+    \input{research/introduction/index}
+    \input{research/literature_review/index}
+    \input{research/methodology/index}
+    \input{research/results_and_discussion/index}
+    \input{research/conclusions/index}
+    \input{pages/references_list}
+    \input{research/appendices/index}
+
+\end{document}
